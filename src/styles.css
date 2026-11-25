@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,18 @@
+<section class="products">
+  <h2>Nos Meilleures Ventes</h2>
+  <div class="grid">
+    @for (product of products$ | async; track product.id) {
+      <div class="card">
+        <a [routerLink]="['/product', product.id]" class="img-container" style="cursor: pointer; display: block;">
+          <img [src]="product.image" [alt]="product.name">
+        </a>
+        <h3>{{ product.name }}</h3>
+        <div class="stars">{{ product.rating }}</div>
+        <div class="price-row">
+          <span class="price">{{ product.price }} €</span>
+          <button class="add-to-cart" (click)="addToCart(product)">Ajouter au Panier 🛒</button>
+        </div>
+      </div>
+    }
+  </div>
+</section>

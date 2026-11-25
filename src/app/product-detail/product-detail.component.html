@@ -1,0 +1,16 @@
+@if (product$ | async; as product) {
+  <div class="product-detail-container">
+    <div class="product-image">
+      <img [src]="product.image" [alt]="product.name">
+    </div>
+    <div class="product-info">
+      <h1>{{ product.name }}</h1>
+      <p class="rating">{{ product.rating }}</p>
+      <p class="price">{{ product.price }} €</p>
+      <p class="description">Découvrez le crunch ultime avec {{ product.name }}. Une texture croustillante et un goût explosif, parfait pour vos soirées et vos pauses gourmandes !</p>
+      <button class="add-to-cart-large" (click)="addToCart(product)">Ajouter au Panier 🛒</button>
+    </div>
+  </div>
+} @else {
+  <p class="loading">Chargement du produit...</p>
+}

@@ -1,0 +1,21 @@
+<header class="navbar">
+  <div class="logo">CRUNCHIX</div>
+  <nav class="nav-links">
+    <a href="#" class="active">Accueil</a>
+    <a href="#">Nos Saveurs</a>
+    <a href="#">Packs</a>
+    <a href="#">À Propos</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="actions">
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" placeholder="Recherche">
+    </div>
+    <div class="lang-switch">FR | EN | AR</div>
+    <!-- الكود السابق لزر السلة -->
+    <button class="cart-btn" (click)="cartService.toggleCart()">
+      🛒 <span class="cart-badge">{{ cartService.cartCount() }}</span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+<div class="cart-overlay" [class.open]="cartService.isCartOpen()" (click)="cartService.toggleCart()"></div>
+
+<div class="cart-sidebar" [class.open]="cartService.isCartOpen()">
+  <div class="cart-header">
+    <h2>Votre Panier</h2>
+    <button class="close-btn" (click)="cartService.toggleCart()">✖</button>
+  </div>
+  
+  <div class="cart-items">
+    @if (cartService.cartItems().length === 0) {
+      <p class="empty-cart">Votre panier est vide.</p>
+    }
+    @for (item of cartService.cartItems(); track $index) {
+      <div class="cart-item">
+        <img [src]="item.image" [alt]="item.name">
+        <div class="item-details">
+          <h4>{{ item.name }}</h4>
+          <span class="item-price">{{ item.price }} €</span>
+        </div>
+        <button class="remove-btn" (click)="cartService.removeFromCart($index)">🗑️</button>
+      </div>
+    }
+  </div>
+
+  <div class="cart-footer">
+    <div class="total">
+      <span>Total:</span>
+      <span>{{ cartService.cartTotal() }} €</span>
+    </div>
+    <button class="checkout-btn" (click)="checkout()">Passer la commande</button>
+  </div>
+</div>
